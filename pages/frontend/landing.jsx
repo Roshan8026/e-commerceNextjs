@@ -7,10 +7,12 @@ import Products from './components/Products';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from '../components/Footer';
+import BannerSection from './components/BannerSection';
+import Wears from './components/Wears';
 
 
 export async function getStaticProps() {
-
+    
     const category = await getCategoriesData() || [];
     const totalProduct = await getProductsData() || [];
 
@@ -32,12 +34,15 @@ export async function getStaticProps() {
 
 
 export default function Landing({ category, product }) {
+    console.log(category, product)
     return (
-        <div className='w-full h-screen bg-gray-900 '>
+        <div className='w-full h-screen '>
             <Navbar pos={"fixed"} />
             <Intro />
             <Categories category={category} />
             <Products product={product} />
+            <Wears />
+            <BannerSection/>
             <Footer />
             <ToastContainer />
         </div>

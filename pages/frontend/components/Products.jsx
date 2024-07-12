@@ -15,7 +15,9 @@ export default function Products({ product }) {
                         )
                     })
                 }
+                
                 {/* card */}
+                
 
             </div>
         </div >
