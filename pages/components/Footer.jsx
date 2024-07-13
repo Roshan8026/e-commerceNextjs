@@ -6,12 +6,12 @@ export default function Footer() {
 
       <div>
         <footer className="text-gray-600 body-font px-2">
-        <section class="text-gray-600 body-font">
-  <div class="container px-5 mx-auto flex flex-col border-b">
-    <div class="lg:w-4/6 mx-auto">
+        <section className="text-gray-600 body-font">
+  <div className="container px-5 mx-auto flex flex-col border-b">
+    <div className="lg:w-4/6 mx-auto">
     
-      <div class="flex flex-col sm:flex-row mt-10">
-        <div class="sm:w-2/4 text-center sm:pr-8 sm:py-8">
+      <div className="flex flex-col sm:flex-row mt-10">
+        <div className="sm:w-2/4 text-center sm:pr-8 sm:py-8">
          <p>Dhan Mill Compound Shed No. 8
 
 Chhatarpur Hills, New Delhi
@@ -20,7 +20,7 @@ Chhatarpur Hills, New Delhi
 <span className="font-bold text-gray-400">Store Locator</span>
      
         </div>
-     <div class="sm:w-2/4 text-center sm:pr-2 sm:py-8 sm:border-l border-gray-200 ">
+     <div className="sm:w-2/4 text-center sm:pr-2 sm:py-8 sm:border-l border-gray-200 ">
          <p>Dhan Mill Compound Shed No. 8
 
 Chhatarpur Hills, New Delhi
@@ -33,8 +33,8 @@ Chhatarpur Hills, New Delhi
     </div>
   </div>
 </section>
-  <div className="container px-5 py-4 mx-auto ">
-    <div className="flex flex-wrap md:text-left text-center -mb-10 -mx-4 ">
+  <div className="container px-5 py-4 mx-auto  ">
+    <div className="flex flex-wrap md:text-left lg:text-center sm:text-left -mb-10 -mx-4 ">
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Assistance</h2>
         <nav className="list-none mb-10">

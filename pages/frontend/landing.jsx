@@ -9,6 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Footer from '../components/Footer';
 import BannerSection from './components/BannerSection';
 import Wears from './components/Wears';
+import SliderSection from './components/SliderSection';
+
 
 
 export async function getStaticProps() {
@@ -37,13 +39,14 @@ export default function Landing({ category, product }) {
     console.log(category, product)
     return (
         <div className='w-full h-screen '>
-            <Navbar pos={"fixed"} />
-            <Intro />
-            <Categories category={category} />
-            <Products product={product} />
-            <Wears />
+            <Navbar pos={"fixed"}/>
+            <Intro/>
+            <SliderSection/>
+            {/* <Categories/> */}
+            {/* <Products product={product} /> */}
+            <Wears/>
             <BannerSection/>
-            <Footer />
+            <Footer/>
             <ToastContainer />
         </div>
     )

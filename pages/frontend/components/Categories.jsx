@@ -1,6 +1,7 @@
 import React from 'react'
 import CatCard from './CatCard'
 
+
 export default function Categories({ category  }) {
     return (
         <div className='w-full p-4 flex flex-wrap items-center justify-center flex-col'>

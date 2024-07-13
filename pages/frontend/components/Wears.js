@@ -2,14 +2,14 @@ import React from 'react'
 import Image from 'next/image'
 import men from '../../../public/men.jpg'
 import women from '../../../public/women.jpg'
-
+import Link from 'next/link';
 
 function Wears() {
   return (
     <div>
-      <section class="text-gray-600 body-font">
-  <div class="container mx-auto flex px-5 py-12 md:flex-row flex-col items-center">
-    <div class=" lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+      <section className="text-gray-600 body-font">
+  <div className="container mx-auto flex px- py-12 md:flex-row flex-col items-center">
+    <div className=" lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
     <Image
       src={men}
       alt="Picture of the author"
@@ -19,12 +19,12 @@ function Wears() {
       }}
     />  
     <div className='text-center'>
-    <span class="inline-block py-1 px-3 mt-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest center">MENSWEAR</span>
+    <Link href="/MenWears" className="inline-block py-1 px-3 mt-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">MENSWEAR</Link>
 
     </div>
 
       </div>
-    <div class=" lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+    <div className=" lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
     <Image
       src={women}
       alt="Picture of the author"
@@ -34,7 +34,7 @@ function Wears() {
       }}
     /> 
 <div className='text-center'>
-<span class="inline-block py-1 px-3 mt-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">WOMENSWEAR</span>
+<Link href="/WomenWears" className="inline-block py-1 px-3 mt-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">WOMENSWEAR</Link>
 
 </div>
        </div>

@@ -7,6 +7,14 @@ import "react-tooltip/dist/react-tooltip.css";
 import Cookies from 'js-cookie'
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import logo from '../../public/LogoImage.jpeg';
+import { FaBarsStaggered } from "react-icons/fa6";
+import { IoSearch } from "react-icons/io5";
+import { PiUsersThreeFill } from "react-icons/pi";
+import { HiShoppingBag } from "react-icons/hi2";
+import { MdKeyboardArrowDown } from "react-icons/md";
+
+
+
 
 
 export default function Navbar({pos}) {
@@ -50,16 +58,22 @@ export default function Navbar({pos}) {
     const hamburger = React.useRef(null);
 
     function toggleMenu() {
-      hamburger.current.classList.toggle('h-0');
-      hamburger.current.classList.toggle('h-56');
+      hamburger.current.classNameList.toggle('h-0');
+      hamburger.current.classNameList.toggle('h-56');
     }
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleDropdown = () => {
+      setIsOpen(!isOpen);
+    };
 
     return (
       <div>
-          <header class="py-3">
-      <section class="max-w-5xl mx-auto w-11/12 sm:flex sm:justify-between sm:items-center">
-        <div class="flex items-center justify-between sm:block">
-          <section class="w-16  border-4 border-black overflow-hidden flex items-center">
+          <header className="py-3 z-50  sticky">
+      <section className="max-w-8xl mx-auto w-11/12 sm:flex sm:justify-between sm:items-center z-50">
+        <div className="flex items-center justify-between sm:block"> 
+          <section className="w-20 border-4 border-black overflow-hidden flex items-center">
           <Image
       src={logo}
       alt="Picture of the author"
@@ -71,35 +85,65 @@ export default function Navbar({pos}) {
           </section>
           <button
             onClick={toggleMenu}
-            class="hamburger rounded-md cursor-pointer py-5 px-4 bg-gray-300 sm:hidden"
+            className="hamburger rounded-md cursor-pointer py-5 sm:hidden"
           >
-            <span />
+   <FaBarsStaggered />
           </button>
         </div>
         <nav
           ref={hamburger}
-          class="overflow-hidden h-0 transition-all duration-300 sm:h-auto"
+          className="overflow-hidden h-0 transition-all duration-300 sm:h-auto"
         >
-          <div class="bg-gray-100 rounded-md p-4 border-8 mt-3 text-center sm:bg-transparent sm:p-0 sm:border-none sm:flex sm:m-0 sm:text-left">
-            <a
-              class="block p-2 font-semibold hover:bg-gray-200 rounded-md"
-              href="#"
+          <div className="bg-gray-100 rounded-md p-4 border-8 mt-3 text-center sm:bg-transparent sm:p-0 sm:border-none sm:flex sm:m-0 sm:text-left">
+              <a
+              className="block p-2 font-semibold hover:bg-gray-200 rounded-md flex text-sm"  onClick={toggleDropdown}
+              href="#" 
             >
-              SHOP
+             
+              {isOpen ? 'SHOP' :'SHOP'}
+              <MdKeyboardArrowDown className="mt-1 ml-2" />
             </a>
+            {isOpen && (
+ <div className="absolute right-100 mt-10 rounded-md shadow-lg bg-gray-200 w-1/6">
+ <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">ALL</a>
+   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">T-SHIRT</a>
+   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">SHIRT</a>
+   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">BOTTOM</a>
+   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">BAG</a>
+ </div>
+</div>
+
+            )}
+             
             <a
-              class="block p-2 font-semibold hover:bg-gray-200 rounded-md"
+              className="block p-2 font-semibold hover:bg-gray-200 rounded-md text-sm"
               href="#"
             >
               OUR STORY
             </a>
             <a
-              class="block p-2 font-semibold hover:bg-gray-200 rounded-md"
+              className="block p-2 font-semibold hover:bg-gray-200 rounded-md text-sm"
               href="#"
             >
               MATERIALS
             </a>
-          
+       
+            
+       <div className="flex  justify-center mt-1">
+            <a className="block p-2 font-semibold text-gray-500"  href="#">
+            <IoSearch/>
+
+          </a>
+            <a className="block p-2 font-semibold text-gray-500"  href="#">
+            <PiUsersThreeFill/>
+
+          </a>
+       
+          <a className="block p-2 font-semibold text-gray-500"  href="#">
+          <HiShoppingBag/>
+          </a>
+          </div>
           </div>
         </nav>
       </section>

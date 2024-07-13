@@ -7,6 +7,8 @@ import heroImg1 from '../../../public/banner.jpg';
 import heroImg2 from '../../../public/hero.jpg';
 import heroImg3 from '../../../public/hero2.jpg';
 
+
+
 export default function Intro() {
 
   return (
