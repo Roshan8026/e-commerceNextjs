@@ -9,7 +9,7 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 import logo from '../../public/LogoImage.jpeg';
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
-import { PiUsersThreeFill } from "react-icons/pi";
+import { FaUser } from "react-icons/fa";
 import { HiShoppingBag } from "react-icons/hi2";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
@@ -57,46 +57,53 @@ export default function Navbar({pos}) {
 
     const hamburger = React.useRef(null);
 
-    function toggleMenu() {
-      hamburger.current.classNameList.toggle('h-0');
-      hamburger.current.classNameList.toggle('h-56');
-    }
+    // function toggleMenu() {
+    //   hamburger.current.classNameList.toggle('h-0');
+    //   hamburger.current.classNameList.toggle('h-56');
+    // }
 
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleDropdown = () => {
       setIsOpen(!isOpen);
     };
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
+  
 
     return (
       <div>
-          <header className="py-3 z-50  sticky">
-      <section className="max-w-8xl mx-auto w-11/12 sm:flex sm:justify-between sm:items-center z-50">
-        <div className="flex items-center justify-between sm:block"> 
-          <section className="w-20 border-4 border-black overflow-hidden flex items-center">
-          <Image
+        <header class="bg-white fixed top-0 w-full shadow-md z-50 hidden lg:flex xl:flex md:flex">
+        <nav class="container mx-auto px-6 py-3 ">
+            <div class="flex justify-between items-center">
+                <Image
       src={logo}
       alt="Picture of the author"
       style={{
-        width: '100%',
-        height: '100%',
+        width: '5%',
+        height: '5%',
       }}
     />
-          </section>
-          <button
-            onClick={toggleMenu}
-            className="hamburger rounded-md cursor-pointer py-5 sm:hidden"
-          >
-   <FaBarsStaggered />
-          </button>
-        </div>
-        <nav
-          ref={hamburger}
-          className="overflow-hidden h-0 transition-all duration-300 sm:h-auto"
-        >
-          <div className="bg-gray-100 rounded-md p-4 border-8 mt-3 text-center sm:bg-transparent sm:p-0 sm:border-none sm:flex sm:m-0 sm:text-left">
-              <a
-              className="block p-2 font-semibold hover:bg-gray-200 rounded-md flex text-sm"  onClick={toggleDropdown}
+
+<div className="md:hidden  flex items-center">
+            <button className="text-gray-800 focus:outline-none" onClick={toggleMenu}>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                {isMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                )}
+              </svg>
+            </button>
+          </div>
+               
+                <div  className={`lg:flex items-center ${isMenuOpen ? 'block' : 'hidden'}`}>
+                  
+                <a
+              className="text-gray-800 hover:text-blue-600 mx-3 flex text-sm"  onClick={toggleDropdown}
               href="#" 
             >
              
@@ -104,7 +111,7 @@ export default function Navbar({pos}) {
               <MdKeyboardArrowDown className="mt-1 ml-2" />
             </a>
             {isOpen && (
- <div className="absolute right-100 mt-10 rounded-md shadow-lg bg-gray-200 w-1/6">
+ <div className="absolute right-100 mt-10 top-10 rounded-md shadow-lg bg-gray-200 w-1/6">
  <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">ALL</a>
    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">T-SHIRT</a>
@@ -114,29 +121,17 @@ export default function Navbar({pos}) {
  </div>
 </div>
 
-            )}
-             
-            <a
-              className="block p-2 font-semibold hover:bg-gray-200 rounded-md text-sm"
-              href="#"
-            >
-              OUR STORY
-            </a>
-            <a
-              className="block p-2 font-semibold hover:bg-gray-200 rounded-md text-sm"
-              href="#"
-            >
-              MATERIALS
-            </a>
-       
-            
-       <div className="flex  justify-center mt-1">
-            <a className="block p-2 font-semibold text-gray-500"  href="#">
+            )}         
+                       <a href="#" class="text-gray-800 hover:text-blue-600 mx-3 text-sm">OUR STORY
+                    </a>
+                    <a href="#" class="text-gray-800 hover:text-blue-600 mx-3 text-sm">MATERIALS</a>
+                    <div className="flex  justify-center mt-1">
+            <a className="block p-2 font-semibold text-gray-500 lg:block md:block sm:none"  href="#">
             <IoSearch/>
 
           </a>
             <a className="block p-2 font-semibold text-gray-500"  href="#">
-            <PiUsersThreeFill/>
+            <FaUser />
 
           </a>
        
@@ -144,10 +139,90 @@ export default function Navbar({pos}) {
           <HiShoppingBag/>
           </a>
           </div>
-          </div>
+                </div>
+              
+            </div>
+          
         </nav>
-      </section>
     </header>
+
+
+    {/*mobile header  */}
+ 
+    <header className="bg-white fixed top-0 w-full shadow-md z-50 flex lg:hidden md:hidden">
+  <nav className="container mx-auto px-2 py-3  items-center justify-between">
+    <div className="flex items-center justify-between">
+    <div className="md:hidden">
+      <button className="text-gray-800 focus:outline-none" onClick={toggleMenu}>
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          {isMenuOpen ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          )}
+        </svg>
+      </button>
+    </div>
+      <Image
+        src={logo}
+        alt="Logo"
+        style={{
+          width: '15%',
+          height: 'auto', 
+        }}
+      />
+     <div>
+     <a className="block p-2 font-semibold text-gray-500 text-2xl" href="#">
+          <HiShoppingBag />
+        </a>
+     </div>
+    </div>
+
+
+    <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+      
+      <div className="flex flex-col mt-4">
+      <a
+              className="text-gray-800 hover:text-blue-600 flex my-2 "  onClick={toggleDropdown}
+              href="#" 
+            >
+             
+              {isOpen ? 'SHOP' :'SHOP'}
+              <MdKeyboardArrowDown className="mt-1 ml-2" />
+            </a>
+            {isOpen && (
+ <div className="absolute right-100 mt-10 top-24 rounded-md shadow-lg bg-gray-200 w-1/4">
+ <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">ALL</a>
+   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">T-SHIRT</a>
+   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">SHIRT</a>
+   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">BOTTOM</a>
+   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">BAG</a>
+ </div>
+</div>
+
+            )} 
+       
+        <a href="#" className="text-gray-800 hover:text-blue-600  my-2">OUR STORY</a>
+        <a href="#" className="text-gray-800 hover:text-blue-600  my-2">MATERIALS</a>
+      </div>
+
+
+      {/* <div className="flex ">
+        <a className="block p-2 font-semibold text-gray-500" href="#">
+          <IoSearch />
+        </a>
+        <a className="block p-2 font-semibold text-gray-500" href="#">
+        <FaUser />
+        </a>
+        <a className="block p-2 font-semibold text-gray-500" href="#">
+          <HiShoppingBag />
+        </a>
+      </div> */}
+    </div>
+  </nav>
+</header>
+
       </div>
     )
 }

@@ -21,7 +21,7 @@ export default function Intro() {
       alt="Picture of the author"
       style={{
         width: '100%',
-        height: '85vh',
+        height: '95vh',
       }}
     />
                 </div>
@@ -31,7 +31,7 @@ export default function Intro() {
       alt="Picture of the author"
       style={{
         width: '100%',
-        height: '85vh',
+        height: '95vh',
       }}
     />
                 </div>
@@ -41,7 +41,7 @@ export default function Intro() {
       alt="Picture of the author"
       style={{
         width: '100%',
-        height: '85vh',
+        height: '95vh',
       }}
     />
                 </div>

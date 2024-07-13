@@ -1,7 +1,12 @@
 import Image from 'next/image'
-import React from 'react'
+import React ,{useState} from 'react'
 
 export default function Footer() {
+  const [activeAccordion, setActiveAccordion] = useState();
+
+  const toggleAccordion = (index) => {
+    setActiveAccordion(index === activeAccordion ? -1 : index);
+  };
     return (
 
       <div>
@@ -33,22 +38,139 @@ Chhatarpur Hills, New Delhi
     </div>
   </div>
 </section>
-  <div className="container px-5 py-4 mx-auto  ">
-    <div className="flex flex-wrap md:text-left lg:text-center sm:text-left -mb-10 -mx-4 ">
+{/* mobile section */}
+<div id="accordionExample">
+      {/* First Accordion Item */}
+      <div className=" border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-body-dark mt-4  lg:hidden md:hidden xl:hidden">
+        <h2 className="mb-0" id="headingOne">
+          <button
+            className={`group relative flex w-full items-center border-b bg-white px-5 py-4 text-left text-base text-neutral-800 transition ${activeAccordion === 0 ? 'bg-white text-primary shadow-border-b' : 'dark:bg-body-dark text-gray-500'} focus:outline-none`}
+            type="button"
+            onClick={() => toggleAccordion(0)}
+            aria-expanded={activeAccordion === 0}
+            aria-controls="collapseOne"
+          >
+            Assistance
+            <span className={`-me-1 ms-auto h-5 w-5 shrink-0 rotate-${activeAccordion === 0 ? '0' : '-180'} transition-transform duration-200 ease-in-out`}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          className={`px-5 py-2 ${activeAccordion === 0 ? 'visible' : 'hidden'}`}
+          aria-labelledby="headingOne"
+        >
+         <p>Shipping and Returns</p>
+         <p>Payment Methods</p>
+        </div>
+      </div>
+
+      {/* Second Accordion Item */}
+      <div className="border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-body-dark mt-3  lg:hidden md:hidden xl:hidden">
+        <h2 className="mb-0" id="headingTwo">
+          <button
+            className={`group relative flex w-full items-center border-b bg-white px-5 py-4 text-left text-base text-neutral-800 transition ${activeAccordion === 1 ? 'bg-white text-primary shadow-border-b' : 'text-gray-500'} focus:outline-none`}
+            type="button"
+            onClick={() => toggleAccordion(1)}
+            aria-expanded={activeAccordion === 1}
+            aria-controls="collapseTwo"
+          >
+          Contact Us
+            <span className={`-me-1 ms-auto h-5 w-5 shrink-0 rotate-${activeAccordion === 1 ? '0' : '-180'} transition-transform duration-200 ease-in-out`}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          className={`px-5 py-2 ${activeAccordion === 1 ? 'visible' : 'hidden'}`}
+          aria-labelledby="headingTwo"
+        >
+        <p>Call Us</p>
+        <p>Email Us</p>
+        <p>Watsapp Us</p>
+        </div>
+      </div>
+
+      {/* Third Accordion Item */}
+      <div className=" border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-body-dark mt-3  lg:hidden md:hidden xl:hidden">
+        <h2 className="mb-0" id="headingThree">
+          <button
+            className={`group relative flex w-full items-center border-b bg-white px-5 py-4 text-left text-base text-neutral-800 transition ${activeAccordion === 2 ? 'bg-white text-primary shadow-border-b' : 'text-gray-500'} focus:outline-none`}
+            type="button"
+            onClick={() => toggleAccordion(2)}
+            aria-expanded={activeAccordion === 2}
+            aria-controls="collapseThree"
+          >
+          company
+            <span className={`-me-1 ms-auto h-5 w-5 shrink-0 rotate-${activeAccordion === 2 ? '0' : '-180'} transition-transform duration-200 ease-in-out`}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          className={`px-5 py-2 ${activeAccordion === 2 ? 'visible' : 'hidden'}`}
+          aria-labelledby="headingThree"
+        >
+        <p>Call Us</p>
+        <p>Email Us</p>
+        <p>Watsapp Us</p>
+        </div>
+      </div>
+
+      {/* forth  */}
+      <div className=" border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-body-dark mt-3  lg:hidden md:hidden xl:hidden">
+        <h2 className="mb-0" id="headingThree">
+          <button
+            className={`group relative flex w-full items-center border-b bg-white px-5 py-4 text-left text-base text-neutral-800 transition ${activeAccordion === 2 ? 'bg-white text-primary shadow-border-b' : 'text-gray-500'} focus:outline-none`}
+            type="button"
+            onClick={() => toggleAccordion(2)}
+            aria-expanded={activeAccordion === 2}
+            aria-controls="collapseThree"
+          >
+       Follow
+            <span className={`-me-1 ms-auto h-5 w-5 shrink-0 rotate-${activeAccordion === 2 ? '0' : '-180'} transition-transform duration-200 ease-in-out`}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          className={`px-5 py-2 ${activeAccordion === 2 ? 'visible' : 'hidden'}`}
+          aria-labelledby="headingThree"
+        >
+          <p>Instagram</p>
+        <p>Linkdin</p>
+        <p>Youtube</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  <div className="container px-5 py-4 mx-auto hidden lg:block md:block xl:block">
+    <div className="flex flex-wrap text-left -mb-10 -mx-4 ">
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Assistance</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+            <a className="text-gray-600 hover:text-gray-800">Contact Us</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+            <a className="text-gray-600 hover:text-gray-800">Shipping, Returns and Payment Methods</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+            <a className="text-gray-600 hover:text-gray-800">Returns</a>
           </li>
         </nav>
       </div>
@@ -56,16 +178,13 @@ Chhatarpur Hills, New Delhi
         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Contact Us</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+            <a className="text-gray-600 hover:text-gray-800">Call Us</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+            <a className="text-gray-600 hover:text-gray-800">Email Us</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+            <a className="text-gray-600 hover:text-gray-800">Whatsapp Us</a>
           </li>
         </nav>
       </div>
@@ -73,16 +192,13 @@ Chhatarpur Hills, New Delhi
         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Company</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+            <a className="text-gray-600 hover:text-gray-800">About Us</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+            <a className="text-gray-600 hover:text-gray-800">The Resurrected Line</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+            <a className="text-gray-600 hover:text-gray-800">Confessional</a>
           </li>
         </nav>
       </div>
@@ -119,7 +235,7 @@ Chhatarpur Hills, New Delhi
     </div>
   </div>
 
-  <div className="bg-gray-100">
+  <div className="bg-gray-100 mt-3">
     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
       <p className="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
         <a href="https://twitter.com/knyttneve" className="text-gray-600 ml-1" target="_blank" rel="noopener noreferrer">@knyttneve</a>
