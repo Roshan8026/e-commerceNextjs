@@ -126,10 +126,10 @@ export default function Navbar({pos}) {
                     </a>
                     <a href="#" class="text-gray-800 hover:text-blue-600 mx-3 text-sm">MATERIALS</a>
                     <div className="flex  justify-center mt-1">
-            <a className="block p-2 font-semibold text-gray-500 lg:block md:block sm:none"  href="#">
+            {/* <a className="block p-2 font-semibold text-gray-500 lg:block md:block sm:none"  href="#">
             <IoSearch/>
 
-          </a>
+          </a> */}
             <a className="block p-2 font-semibold text-gray-500"  href="#">
             <FaUser />
 

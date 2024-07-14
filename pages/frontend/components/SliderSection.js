@@ -94,7 +94,7 @@ function SliderSection() {
                 <p className="leading-relaxed mb-3">{slide.description}</p>
                 <div className="flex items-center flex-wrap">
                   <Link href="/ProductDetails" className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-                    Learn More
+                    $44
                     <svg
                       className="w-4 h-4 ml-2"
                       viewBox="0 0 24 24"

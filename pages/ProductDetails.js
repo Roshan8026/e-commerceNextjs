@@ -50,7 +50,7 @@ function ProductDetails() {
             <h2 className="text-gray-900 text-lg title-font font-medium">₹8,500</h2>
           </div>
           <div className="flex-grow">
-            <div className="flex gap-8 text-sm">
+            {/* <div className="flex gap-8 text-sm">
                 <p>XS</p>
                 <p>S</p>
                 <p>M</p>
@@ -58,14 +58,14 @@ function ProductDetails() {
                 <p>XL</p>
                 <p>XXL</p>
                 <p>XXXL</p>
-            </div>
+            </div> */}
             <button className=" mt-8 text-white bg-black border-0 py-2 w-full text-center focus:outline-none hover:bg-gray-600 rounded text-sm font-bold">ADD TO CARD</button>
 
-            <a className="mt-3 text-indigo-500 inline-flex items-center">SIZE GUID 
+            {/* <a className="mt-3 text-indigo-500 inline-flex items-center">SIZE GUID 
               <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

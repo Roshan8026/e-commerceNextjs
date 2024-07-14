@@ -19,7 +19,7 @@ function Wears() {
       }}
     />  
     <div className='text-center'>
-    <Link href="/MenWears" className="inline-block py-1 px-3 mt-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">MENSWEAR</Link>
+    <Link href="/MenWears" className="inline-block py-1 px-3 mt-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">MEN</Link>
 
     </div>
 
@@ -34,7 +34,7 @@ function Wears() {
       }}
     /> 
 <div className='text-center'>
-<Link href="/WomenWears" className="inline-block py-1 px-3 mt-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">WOMENSWEAR</Link>
+<Link href="/WomenWears" className="inline-block py-1 px-3 mt-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">WOMEN</Link>
 
 </div>
        </div>
