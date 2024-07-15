@@ -43,7 +43,7 @@ export default function Landing({ category, product }) {
             <Intro/>
             <SliderSection/>
             {/* <Categories/> */}
-            {/* <Products product={product} /> */}
+            <Products product={product} />
             <Wears/>
             <BannerSection/>
             <Footer/>

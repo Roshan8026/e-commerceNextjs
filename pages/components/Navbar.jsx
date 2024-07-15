@@ -86,6 +86,7 @@ export default function Navbar({pos}) {
         width: '5%',
         height: '5%',
       }}
+      onClick={() => Router.push('/frontend/landing')}
     />
 
 <div className="md:hidden  flex items-center">
@@ -111,15 +112,15 @@ export default function Navbar({pos}) {
               <MdKeyboardArrowDown className="mt-1 ml-2" />
             </a>
             {isOpen && (
- <div className="absolute right-100 mt-10 top-10 rounded-md shadow-lg bg-gray-200 w-1/6">
- <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">ALL</a>
-   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">T-SHIRT</a>
-   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">SHIRT</a>
-   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">BOTTOM</a>
-   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">BAG</a>
- </div>
-</div>
+            <div className="absolute right-100 mt-10 top-10 rounded-md shadow-lg bg-gray-200 w-1/6">
+            <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+              <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">ALL</a>
+              <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">T-SHIRT</a>
+              <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">SHIRT</a>
+              <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">BOTTOM</a>
+              <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">BAG</a>
+            </div>
+            </div>
 
             )}         
                        <a href="#" class="text-gray-800 hover:text-blue-600 mx-3 text-sm">OUR STORY
@@ -135,9 +136,25 @@ export default function Navbar({pos}) {
 
           </a>
        
-          <a className="block p-2 font-semibold text-gray-500"  href="#">
-          <HiShoppingBag/>
-          </a>
+          <>
+          <AiOutlineShoppingCart onClick={()  => Router.push('/frontend/cart')}  className='text-2xl  mx-4 hover:text-orange-600 transition-all duration-500 cursor-pointer' />
+                {
+                    curUser ? <BiLogOut id="logout" className='text-2xl  mx-4  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={logout} /> : <BiLogIn id="login" className='text-2xl  mx-4  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={() => Router.push('/login')}  />
+                }
+
+            <ReactTooltip
+                anchorId="login"
+                place="bottom"
+                variant="info"
+                content="LOGIN"
+            />
+            <ReactTooltip
+                anchorId="logout"
+                place="bottom"
+                variant="info"
+                content="LOGOUT"
+            />
+          </>
           </div>
                 </div>
               

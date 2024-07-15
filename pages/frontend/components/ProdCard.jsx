@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { FaCartPlus } from 'react-icons/fa'
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
 import { add_to_cart } from '@/services/admin';
@@ -20,6 +20,7 @@ export default function ProdCard({ item }) {
     }, [])
 
     const AddtoCart = async () => {
+        console.log('clog');
         if (!token) {
             toast.error('Please login ', {
                 position: "top-right",
@@ -34,9 +35,22 @@ export default function ProdCard({ item }) {
         }
 
         if (userID) {
-            const { _id, name, image, price } = item;
-            const data = { productID: _id, productName: name, productImage: image, productPrice: price, user: userID , productQuantity: 1}
-            
+            try {
+                const { _id, name, image, price } = item;
+                const data = { productID: _id, productName: name, productImage: image, productPrice: price, user: userID , productQuantity: 1}
+                console.log('data',data);
+                
+                const Addtocart = await add_to_cart(data);
+                console.log('Addtocart',Addtocart)
+                if(Addtocart.error) {
+                    toast.error(Addtocart.error)
+                } else {
+                    toast.success(Addtocart.msg)
+                }
+            } catch (error) {
+                console.log(error.response.data.error)
+                toast.error(error.response.data.error)
+            } 
         }
 
     }
@@ -57,6 +71,7 @@ export default function ProdCard({ item }) {
                     <FaCartPlus onClick={AddtoCart} className='text-orange-600 text-2xl mr-4' />
                 </div>
             </div>
+              <ToastContainer />
         </div>
     )
 }
