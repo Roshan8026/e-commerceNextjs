@@ -13,22 +13,48 @@ export default function CartCard({ item, userID, reupdate }) {
 
 
 
-    const delete_cart = async () => {
-        
+    const delete_cart = async (data) => {
+        console.log('data',data);
+        try {
+            const deleteCart = await delete_cart_data(data);
+                console.log('deleteCart',deleteCart)
+                if(deleteCart.error) {
+                    toast.error(deleteCart.error)
+                } else {
+                    toast.success(deleteCart.msg)
+                }
+            } catch (error) {
+                console.log(error.response.data.error)
+                toast.error(error.response.data.error)
+            } 
     }
 
 
-    const updateQuantity = async () => {
-       
+    const updateQuantity = async (data) => {
+        console.log('data',data);
+        try {
+            const updateCart = await update_cart_data(data);
+                console.log('updateCart',updateCart)
+                if(updateCart.error) {
+                    toast.error(updateCart.error)
+                } else {
+                    toast.success(updateCart.msg)
+                }
+            } catch (error) {
+                console.log(error.response.data.error)
+                toast.error(error.response.data.error)
+            } 
     }
 
-    const handleAdd = () => {
-       
-        
+    const handleAdd = (data) => {
+       setCurQuantity(Curquantity + 1)
+        updateQuantity(data)
     }
 
     const handleSubtract = () => {
-       
+        if(Curquantity > 1 ){
+            setCurQuantity(Curquantity - 1)
+        }
     }
 
 
@@ -44,12 +70,12 @@ export default function CartCard({ item, userID, reupdate }) {
                 <p className='text-xl font-semibold '>$ {item.productPrice}</p>
             </div>
             <div className='w-40 h-full flex items-center justify-center '>
-                <button onClick={handleAdd} className='text-2xl  text-center font-semibold  outline-none hover:scale-125 transition duration-500 w-10 h-10  flex items-center justify-center '>+</button>
+                <button onClick={()=>handleAdd(item)} className='text-2xl  text-center font-semibold  outline-none hover:scale-125 transition duration-500 w-10 h-10  flex items-center justify-center '>+</button>
                 <p className=' text-gray-100 scale-110 font-semibold w-10 h-10 flex items-center justify-center text-2xl'>{Curquantity}</p>
                 <button onClick={handleSubtract} className='text-2xl  text-center font-semibold  outline-none hover:scale-125 transition duration-500 w-10 h-10  flex items-center justify-center '>-</button>
             </div>
             <div className='w-40 h-full flex items-center justify-center '>
-                <AiOutlineDelete onClick={delete_cart} className="font-semibold text-4xl  cursor-pointer hover:text-red-500" />
+                <AiOutlineDelete onClick={()=> delete_cart(item)} className="font-semibold text-4xl  cursor-pointer hover:text-red-500" />
             </div>
         </div>
     )
