@@ -76,7 +76,7 @@ export default function Navbar({pos}) {
 
     return (
       <div>
-        <header class="bg-white fixed top-0 w-full shadow-md z-50 hidden lg:flex xl:flex md:flex">
+        <header class="bg-black fixed top-0 w-full shadow-md z-50 hidden lg:flex xl:flex md:flex">
         <nav class="container mx-auto px-6 py-3 ">
             <div class="flex justify-between items-center">
                 <Image
@@ -104,7 +104,7 @@ export default function Navbar({pos}) {
                 <div  className={`lg:flex items-center ${isMenuOpen ? 'block' : 'hidden'}`}>
                   
                 <a
-              className="text-gray-800 hover:text-blue-600 mx-3 flex text-sm"  onClick={toggleDropdown}
+              className="text-white hover:text-blue-600 mx-3 flex text-sm"  onClick={toggleDropdown}
               href="#" 
             >
              
@@ -123,23 +123,23 @@ export default function Navbar({pos}) {
             </div>
 
             )}         
-                       <a href="#" class="text-gray-800 hover:text-blue-600 mx-3 text-sm">OUR STORY
+                       <a href="#" class="text-white hover:text-blue-600 mx-3 text-sm">OUR STORY
                     </a>
-                    <a href="#" class="text-gray-800 hover:text-blue-600 mx-3 text-sm">MATERIALS</a>
+                    <a href="#" class="text-white hover:text-blue-600 mx-3 text-sm">MATERIALS</a>
                     <div className="flex  justify-center mt-1">
             {/* <a className="block p-2 font-semibold text-gray-500 lg:block md:block sm:none"  href="#">
             <IoSearch/>
 
           </a> */}
-            <a className="block p-2 font-semibold text-gray-500"  href="#">
+            <a className="block p-2 font-semibold text-white text-1xl"  href="#">
             <FaUser />
 
           </a>
        
           <>
-          <AiOutlineShoppingCart onClick={()  => Router.push('/frontend/cart')}  className='text-2xl  mx-4 hover:text-orange-600 transition-all duration-500 cursor-pointer' />
+          <AiOutlineShoppingCart onClick={()  => Router.push('/frontend/cart')}  className='text-2xl text-white mx-4 hover:text-orange-600 transition-all duration-500 cursor-pointer' />
                 {
-                    curUser ? <BiLogOut id="logout" className='text-2xl  mx-4  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={logout} /> : <BiLogIn id="login" className='text-2xl  mx-4  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={() => Router.push('/login')}  />
+                    curUser ? <BiLogOut id="logout" className='text-2xl  text-white mx-4  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={logout} /> : <BiLogIn id="login" className='text-2xl  mx-4  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={() => Router.push('/login')}  />
                 }
 
             <ReactTooltip
@@ -147,12 +147,14 @@ export default function Navbar({pos}) {
                 place="bottom"
                 variant="info"
                 content="LOGIN"
+                className="text-white"
             />
             <ReactTooltip
                 anchorId="logout"
                 place="bottom"
                 variant="info"
                 content="LOGOUT"
+                 className="text-white"
             />
           </>
           </div>

@@ -70,7 +70,7 @@ function SliderSection() {
   return (
     <div>
       <h1 className="p-2 mb-6 mt-2 text-4xl uppercase font-bold text-center">
-        Top Categories
+      New Arrivals
       </h1>
 
       <Slider {...settings}>

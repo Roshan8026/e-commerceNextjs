@@ -44,7 +44,7 @@ function ProductDetails() {
           </div>
         </div>
       </div>
-      <div className="p-4 md:w-1/3">
+      <div className="p-4 md:w-1/3 w-full">
         <div className="flex rounded-lg h-25 bg-gray-100 p-8 flex-col">
           <div className="flex items-center mb-3">
             <h2 className="text-gray-900 text-lg title-font font-medium">₹8,500</h2>
