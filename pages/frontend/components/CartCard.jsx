@@ -64,18 +64,18 @@ export default function CartCard({ item, userID, reupdate }) {
                 <Image src={item.productImage} alt="hello" height={100} width={100} />
             </div>
             <div className='w-40 h-full flex items-center justify-center '>
-                <p className='text-xl font-semibold '>{item.productName}</p>
+                <p className='lg:text-xl font-semibold text-md'>{item.productName}</p>
             </div>
             <div className='w-40 h-full flex items-center justify-center '>
-                <p className='text-xl font-semibold '>$ {item.productPrice}</p>
+                <p className='lg:text-xl font-semibold text-md'>$ {item.productPrice}</p>
             </div>
             <div className='w-40 h-full flex items-center justify-center '>
                 <button onClick={()=>handleAdd(item)} className='text-2xl  text-center font-semibold  outline-none hover:scale-125 transition duration-500 w-10 h-10  flex items-center justify-center '>+</button>
-                <p className=' text-gray-100 scale-110 font-semibold w-10 h-10 flex items-center justify-center text-2xl'>{Curquantity}</p>
+                <p className=' text-gray-100 scale-110 font-semibold w-10 h-10 flex items-center justify-center text-md lg:text-2xl'>{Curquantity}</p>
                 <button onClick={handleSubtract} className='text-2xl  text-center font-semibold  outline-none hover:scale-125 transition duration-500 w-10 h-10  flex items-center justify-center '>-</button>
             </div>
             <div className='w-40 h-full flex items-center justify-center '>
-                <AiOutlineDelete onClick={()=> delete_cart(item)} className="font-semibold text-4xl  cursor-pointer hover:text-red-500" />
+                <AiOutlineDelete onClick={()=> delete_cart(item)} className="font-semibold lg:text-4xl text-xl cursor-pointer hover:text-red-500" />
             </div>
         </div>
     )
