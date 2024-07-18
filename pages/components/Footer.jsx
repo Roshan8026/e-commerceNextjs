@@ -90,9 +90,9 @@ Chhatarpur Hills, New Delhi
           className={`px-5 py-2 ${activeAccordion === 1 ? 'visible' : 'hidden'}`}
           aria-labelledby="headingTwo"
         >
-        <p>Call Us</p>
-        <p>Email Us</p>
-        <p>Watsapp Us</p>
+        <p><BiPhoneCall className="mb-2 text-2xl"/></p>
+        <p><TfiEmail className="mb-2 text-2xl"/></p>
+        <p><FaWhatsapp className="mb-2 text-2xl"/></p>
         </div>
       </div>
 

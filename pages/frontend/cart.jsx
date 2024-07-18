@@ -36,7 +36,6 @@ export default function cart() {
     }
 
 
-
     return (
         <div className='w-full h-screen bg-slate-900'>
             <Navbar pos={""} />
@@ -49,7 +48,7 @@ export default function cart() {
                             <Link href='/frontend/landing' className='w-40 h-12 bg-orange-600 text-xl font-bold text-white flex items-center justify-center text-center rounded-xl'><BsCartPlusFill className='text-xl' />Start Shopping</Link>
                         </div>
                     ) : (
-                        <div className='w-full h-full  overflow-auto px-4 py-2'>
+                        <div className='w- h-full  overflow-auto px-4 py-2'>
                             {
                                 cartItem?.map((item) => {
                                     return (
@@ -62,7 +61,7 @@ export default function cart() {
                 }
 
 
-                <div className='w-full lg:w-1/4 mx-auto~ p-2 flex  flex-col justify-center mt-4'>
+                <div className='w-full lg:w-1/4 ml-auto p-2 flex  flex-col justify-center mt-4'>
                     <h1 className='uppercase text-2xl font-bold py-3 border-b-2 border-gray-900 '>Total Price</h1>
                     <p className='text-2xl font-semibold p-2'>$ {totalPrice}</p>
                     <button className='text-lg font-semibold bg-orange-600 text-white uppercase px-4  py-2 cursor-pointer border-2 border-orange-600 rounded-xl hover:bg-transparent hover:text-black duration-700 transition'>CheckOut</button>

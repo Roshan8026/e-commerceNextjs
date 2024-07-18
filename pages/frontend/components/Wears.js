@@ -18,10 +18,10 @@ function Wears() {
         height: '100vh',
       }}
     />  
-    <div className='text-center'>
+    {/* <div className='text-center'>
     <Link href="/MenWears" className="inline-block py-1 px-3 mt-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">MEN</Link>
 
-    </div>
+    </div> */}
 
       </div>
     <div className=" lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">

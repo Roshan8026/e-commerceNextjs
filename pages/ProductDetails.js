@@ -17,8 +17,8 @@ function ProductDetails() {
       <Navbar/>
 <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-wrap -m-4">
-      <div className="p-4 md:w-1/3">
+    <div className="flex flex-wrap -m-4 mt-4">
+      <div className="p-4 md:w-1/3 order-2 lg:order-1">
         <div className="flex rounded-lg h-25 bg-gray-100 p-8 flex-col">
           <div className="flex items-center mb-3">
           
@@ -32,7 +32,7 @@ function ProductDetails() {
           </div>
         </div>
       </div>
-      <div className="p-4 md:w-1/3">
+      <div className="p-4 md:w-1/3 order-1 lg:order-2">
         <div className="flex rounded-lg bg-gray-100 p-8 flex-col">
           <div className="flex items-center mb-3">
           <Image
@@ -44,7 +44,7 @@ function ProductDetails() {
           </div>
         </div>
       </div>
-      <div className="p-4 md:w-1/3 w-full">
+      <div className="p-4 md:w-1/3 w-full order-3 lg:order-3">
         <div className="flex rounded-lg h-25 bg-gray-100 p-8 flex-col">
           <div className="flex items-center mb-3">
             <h2 className="text-gray-900 text-lg title-font font-medium">₹8,500</h2>
