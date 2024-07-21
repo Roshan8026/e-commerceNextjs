@@ -41,10 +41,12 @@ export default function Landing({ category, product }) {
         <div className='w-full h-screen '>
             <Navbar pos={"fixed"}/>
             <Intro/>
-            <SliderSection/>
+            {/* <SliderSection/>  */}
             {/* <Categories/> */}
             <Products product={product} />
             <Wears/>
+            <h3><b>Natural dyeing </b></h3>
+             <Wears/>
             <BannerSection/>
             <Footer/>
             <ToastContainer />

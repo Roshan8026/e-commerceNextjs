@@ -237,7 +237,7 @@ Chhatarpur Hills, New Delhi
 
   <div className="bg-black mt-3 border-t">
     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-      <p className="text-white text-sm text-center sm:text-left">© 2020 Tailblocks —
+      <p className="text-white text-sm text-center sm:text-left">© 2024 Circle —
         <a href="https://twitter.com/knyttneve" className="text-text ml-1" target="_blank" rel="noopener noreferrer">@knyttneve</a>
       </p>
       <span className="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-white text-sm">Enamel pin tousled raclette tacos irony</span>
