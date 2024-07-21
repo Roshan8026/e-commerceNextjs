@@ -7,11 +7,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link'
 import { BsCartPlusFill } from 'react-icons/bs'
+import CheckoutForm from './components/CheckoutForm';
 
 
 export default function cart() {
     const [cartItem, setCartItem] = useState([]);
     const [userID, setUserID] = useState(undefined);
+    const [showCheckout, setShowCheckout] = useState(false);
 
     const getLatestCartData = async () => {
         const getUser = localStorage.getItem('user')
@@ -64,11 +66,12 @@ export default function cart() {
                 <div className='w-full lg:w-1/4 ml-auto p-2 flex  flex-col justify-center mt-4'>
                     <h1 className='uppercase text-2xl font-bold py-3 border-b-2 border-gray-900 '>Total Price</h1>
                     <p className='text-2xl font-semibold p-2'>₹ {totalPrice}</p>
-                    <button className='text-lg font-semibold bg-orange-600 text-white uppercase px-4  py-2 cursor-pointer border-2 border-orange-600 rounded-xl hover:bg-transparent hover:text-black duration-700 transition'>CheckOut</button>
+                    <button className='text-lg font-semibold bg-orange-600 text-white uppercase px-4  py-2 cursor-pointer border-2 border-orange-600 rounded-xl hover:bg-transparent hover:text-black duration-700 transition' onClick={() => setShowCheckout(true)}>CheckOut</button>
                 </div>
             </div>
             <Footer />
             <ToastContainer />
+                {showCheckout && <CheckoutForm onClose={() => setShowCheckout(false)} />}
         </div >
     )
 }
