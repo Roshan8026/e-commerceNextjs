@@ -12,7 +12,9 @@ import tshirts from '../../../public/tshirts.jpg';
 import bag2 from '../../../public/bag2.jpg';
 import bottoms from '../../../public/bottoms.jpg';
 
-function SliderSection() {
+function SliderSection({product}) {
+
+  console.log('sdaf',product);
   // Define your slide data
   const slides = [
     {
@@ -74,25 +76,28 @@ function SliderSection() {
       </h1>
 
       <Slider {...settings}>
-        {slides.map((slide, index) => (
+        {product.map((slide, index) => (
+          <Link href={`/frontend/components/products/${slide._id}`}>
           <div key={index} className="p-4 w-full">
             <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transition-all duration-500 hover:scale-110 shadow-lg">
               <Image
-                src={slide.image}
+                src={slide.front_image}
                 alt="Slider Image"
                 width={500}
                 height={200}
                 layout="responsive"
               />
               <div className="p-6">
-                <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                {/* <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                   {slide.category}
                 </h2>
                 <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                   {slide.title}
-                </h1>
+                </h1> */}
+                <p className="leading-relaxed mb-3">{slide.name}</p>
                 <p className="leading-relaxed mb-3">{slide.description}</p>
-                <div className="flex items-center flex-wrap">
+                <p className="leading-relaxed mb-3">₹{slide.price}</p>
+                {/* <div className="flex items-center flex-wrap">
                   <Link href="/ProductDetails" className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                     $44
                     <svg
@@ -108,11 +113,12 @@ function SliderSection() {
                       <path d="M12 5l7 7-7 7"></path>
                     </svg>
                   </Link>
-                  {/* Additional elements */}
-                </div>
+                  
+                </div> */}
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </Slider>
     </div>

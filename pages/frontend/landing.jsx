@@ -41,9 +41,9 @@ export default function Landing({ category, product }) {
         <div className='w-full h-screen '>
             <Navbar pos={"fixed"}/>
             <Intro/>
-            {/* <SliderSection/>  */}
+            <SliderSection product={product}/> 
             {/* <Categories/> */}
-            <Products product={product} />
+            {/* <Products product={product} /> */}
             <Wears/>
             <h1 className="p-2 mb-6 mt-2 text-4xl uppercase font-bold text-center">
                  Natural dyeing 

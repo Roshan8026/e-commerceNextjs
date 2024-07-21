@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { add_to_cart } from '@/services/admin';
 import Cookies from 'js-cookie';
+import shirt2 from '../../../../public/shirt2.jpg'
 
 const ProductDetails = ({ product }) => {
     const router = useRouter()
@@ -48,8 +49,8 @@ const ProductDetails = ({ product }) => {
 
         if (userID) {
             try {
-                const { _id, name, image, price } = product;
-                const data = { productID: _id, productName: name, productImage: image, productPrice: price, user: userID , productQuantity: 1}
+                const { _id, name, front_image, price } = product;
+                const data = { productID: _id, productName: name, productImage: front_image, productPrice: price, user: userID , productQuantity: 1}
                 console.log('data',data);
                 
                 const Addtocart = await add_to_cart(data);
@@ -91,7 +92,40 @@ const ProductDetails = ({ product }) => {
                     <div className="flex rounded-lg bg-gray-100 p-8 flex-col">
                     <div className="flex items-center mb-3">
                     <Image
-                            src={product.image} // Assuming product.image contains the URL of the image
+                            src={product.front_image} // Assuming product.image contains the URL of the image
+                            alt="Image"
+                            width={500}
+                            height={200}
+                        />
+                    </div>
+                    </div>
+                    <br />
+                     <div className="flex rounded-lg bg-gray-100 p-8 flex-col">
+                    <div className="flex items-center mb-3">
+                    <Image
+                            src={product.back_image} // Assuming product.image contains the URL of the image
+                            alt="Image"
+                            width={500}
+                            height={200}
+                        />
+                    </div>
+                    </div>
+                    <br />
+                    <div className="flex rounded-lg bg-gray-100 p-8 flex-col">
+                    <div className="flex items-center mb-3">
+                    <Image
+                            src={product.top_image} // Assuming product.image contains the URL of the image
+                            alt="Image"
+                            width={500}
+                            height={200}
+                        />
+                    </div>
+                    </div>
+                    <br />
+                    <div className="flex rounded-lg bg-gray-100 p-8 flex-col">
+                    <div className="flex items-center mb-3">
+                    <Image
+                            src={product.bottom_image} // Assuming product.image contains the URL of the image
                             alt="Image"
                             width={500}
                             height={200}
@@ -104,24 +138,27 @@ const ProductDetails = ({ product }) => {
                     <div className="flex items-center mb-3">
                         <h2 className="text-gray-900 text-lg title-font font-medium">₹{product.price}</h2>
                     </div>
-                    <div className="flex-grow">
-                        <div className="flex gap-8 text-sm">
-                            <p>XS</p>
-                            <p>S</p>
+                        <div className="flex-grow">
+                            <div   className="flex gap-8 text-sm">
+                            {product.tags.map((row, rowIndex) => (
+                                <>
+                                <p key={rowIndex}>{row}</p></>
+                            ))}
+                            {/* <p>S</p>
                             <p>M</p>
                             <p>L</p>
                             <p>XL</p>
                             <p>XXL</p>
-                            <p>XXXL</p>
-                        </div>
-                        <button className=" mt-8 text-white bg-black border-0 py-2 w-full text-center focus:outline-none hover:bg-gray-600 rounded text-sm font-bold" onClick={AddtoCart}>ADD TO CARD</button>
+                            <p>XXXL</p> */}
+                            </div>
+                            <button className=" mt-8 text-white bg-black border-0 py-2 w-full text-center focus:outline-none hover:bg-gray-600 rounded text-sm font-bold" onClick={AddtoCart}>ADD TO CARD</button>
 
-                        {/* <a className="mt-3 text-indigo-500 inline-flex items-center">SIZE GUID 
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                        </a> */}
-                    </div>
+                            {/* <a className="mt-3 text-indigo-500 inline-flex items-center">SIZE GUID 
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                            </a> */}
+                        </div>
                     </div>
                 </div>
                 </div>
