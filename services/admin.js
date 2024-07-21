@@ -271,3 +271,39 @@ export const update_cart_data = async (data) => {
     }
 
 }
+
+
+// ---------------------------------------------- Banner---------------------------------------------------------------------------------
+
+// adding Banner
+export const add_banner = async (banner_data) => {
+    try {
+        const res = await fetch(`${baseURl}/api/admin/banner`, {
+            method: 'POST',
+            headers:
+            {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(banner_data)
+        })
+        const data = await res.json();
+        return data;
+    }
+    catch (error) {
+        console.log('error in saving Banner (services) => ' + error)
+    }
+}
+
+
+// getting all products data
+export const getBannerData = async () => {
+    try {
+        const res = await fetch(`${baseURl}/api/admin/banner`, {
+            method: 'GET',
+        })
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.log('error in getting Banner data (services) => ' + error);
+    }
+}
