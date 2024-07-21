@@ -7,7 +7,6 @@ import Link from 'next/link';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-
 export async function getStaticProps() {
     const data = await getBannerData() || [];
 
