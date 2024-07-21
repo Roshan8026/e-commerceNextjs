@@ -295,7 +295,7 @@ export const add_banner = async (banner_data) => {
 }
 
 
-// getting all products data
+// getting all Banner data
 export const getBannerData = async () => {
     try {
         const res = await fetch(`${baseURl}/api/admin/banner`, {
@@ -305,5 +305,19 @@ export const getBannerData = async () => {
         return data;
     } catch (error) {
         console.log('error in getting Banner data (services) => ' + error);
+    }
+}
+
+// delete specific Banner
+export const delete_Banner = async (id) => {
+    try {
+        const res = await fetch(`${baseURl}/api/admin/banner?id=${id}`, {
+            method: 'DELETE',
+        })
+        const data = await res.json()
+        return data
+    }
+    catch (error) {
+        console.log('error in deleting Banner Data (services) => ' + error);
     }
 }
