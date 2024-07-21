@@ -69,7 +69,7 @@ export default function getProducts({ data }) {
                                                 Featured Product
                                             </th>
                                             <th scope="col" className="text-sm font-medium text-white px-6 py-4 ">
-                                                Image
+                                                Front Image
                                             </th>
                                             <th scope="col" className="text-sm font-medium text-white px-6 py-4 ">
                                                 Action
@@ -89,10 +89,10 @@ export default function getProducts({ data }) {
                                                             {product.featured === true ? "YES" : "NO"}
                                                         </td>
                                                         <td className="text-sm text-white flex items-center justify-center font-light px-6 py-4 whitespace-nowrap">
-                                                            <Image width={100} height={100} src={product.image} alt="product Image" />
+                                                            <Image width={100} height={100} src={product.front_image} alt="product Image" />
                                                         </td>
                                                         <td>
-                                                            <Link href={`updateProducts/${product._id}`} class="bg-orange-500 mx-2 hover:bg-orange-900 text-white font-bold py-2 px-4 rounded-full">Update</Link>
+                                                            {/* <Link href={`updateProducts/${product._id}`} class="bg-orange-500 mx-2 hover:bg-orange-900 text-white font-bold py-2 px-4 rounded-full">Update</Link> */}
                                                             <button onClick={() => handleDelete(product._id)} class="bg-red-500 mx-2 hover:bg-red-900 text-white font-bold py-2 px-4 rounded-full">Delete</button>
                                                         </td>
                                                     </tr>
