@@ -67,7 +67,8 @@ export default function CartCard({ item, userID, reupdate }) {
                 <p className='lg:text-xl font-semibold text-md'>{item.productName}</p>
             </div>
             <div className='w-40 h-full flex items-center justify-center '>
-                <p className='lg:text-xl font-semibold text-md'>$ {item.productPrice}</p>
+                {/* <p className='lg:text-xl font-semibold text-md'>$ {item.productPrice}</p>₹ */}
+                <p className='lg:text-xl font-semibold text-md'>₹ {item.productPrice}</p>
             </div>
             <div className='w-40 h-full flex items-center justify-center '>
                 <button onClick={()=>handleAdd(item)} className='text-2xl  text-center font-semibold  outline-none hover:scale-125 transition duration-500 w-10 h-10  flex items-center justify-center '>+</button>

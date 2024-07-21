@@ -45,7 +45,9 @@ export default function Landing({ category, product }) {
             {/* <Categories/> */}
             <Products product={product} />
             <Wears/>
-            <h3><b>Natural dyeing </b></h3>
+            <h1 className="p-2 mb-6 mt-2 text-4xl uppercase font-bold text-center">
+                 Natural dyeing 
+            </h1>
              <Wears/>
             <BannerSection/>
             <Footer/>
