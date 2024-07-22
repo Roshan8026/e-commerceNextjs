@@ -24,10 +24,7 @@ export default function Footer() {
     
       <div className=" mt-10">
         <div className="w-full text-center text-white sm:pr-8 sm:py-8">
-         <p>Dhan Mill Compound Shed No. 8
-
-Chhatarpur Hills, New Delhi
-
+         <p>39, 5th main Road, kasthuribai nagar, Adyar, chennai - 600020
 </p>
 <span className="font-bold text-white">Store Locator</span>
      
@@ -90,9 +87,15 @@ Chhatarpur Hills, New Delhi
           className={`px-5 py-2 ${activeAccordion === 1 ? 'visible' : 'hidden'}`}
           aria-labelledby="headingTwo"
         >
-        <p><BiPhoneCall className="mb-2 text-2xl"/></p>
+        <a href="tel:+8015468175">
+            <p><BiPhoneCall className="mb-2 text-2xl"/></p>
+        </a>
+         <a href="mailto:info@crclestudio.com">
         <p><TfiEmail className="mb-2 text-2xl"/></p>
+        </a>
+        <a href="https://wa.me/8015468175">
         <p><FaWhatsapp className="mb-2 text-2xl"/></p>
+        </a>
         </div>
       </div>
 
@@ -148,8 +151,9 @@ Chhatarpur Hills, New Delhi
           className={`px-5 py-2 ${activeAccordion === 3 ? 'visible' : 'hidden'}`}
           aria-labelledby="headingFour"
         >
-
+          <a href="https://www.instagram.com/crclestudio/" target="_blank" rel="noopener noreferrer">
           <FaInstagram className="text-2xl mb-3" />
+          </a>
         <IoLogoLinkedin className="text-2xl mb-3"/>
         <IoLogoYoutube className="text-2xl mb-3"/>
         </div>
@@ -178,13 +182,13 @@ Chhatarpur Hills, New Delhi
         <h2 className="title-font font-medium text-white tracking-widest text-xl mb-3">Contact Us</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-white hover:text-orange-500 "><BiPhoneCall className="mb-2 text-2xl"/></a>
+            <a className="text-white hover:text-orange-500 " href="tel:+8015468175"><BiPhoneCall className="mb-2 text-2xl"/></a>
           </li>
           <li>
-            <a className="text-white hover:text-orange-500 "><TfiEmail className="mb-2 text-2xl" /></a>
+            <a className="text-white hover:text-orange-500 " href="mailto:info@crclestudio.com"><TfiEmail className="mb-2 text-2xl" /></a>
           </li>
           <li>
-            <a className="text-white hover:text-orange-500"><FaWhatsapp className="mb-2 text-2xl"/></a>
+            <a className="text-white hover:text-orange-500" href="https://wa.me/8015468175"><FaWhatsapp className="mb-2 text-2xl"/></a>
           </li>
         </nav>
       </div>
@@ -211,12 +215,13 @@ Chhatarpur Hills, New Delhi
             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
           </svg>
         </a>
-        <a className="ml-3 text-white">
+        {/* <a className="ml-3 text-white">
           <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
             <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
           </svg>
-        </a>
-        <a className="ml-3 text-white">
+        </a> */}
+        
+        <a className="ml-3 text-white" href="https://www.instagram.com/crclestudio/" target="_blank" rel="noopener noreferrer">
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
@@ -237,10 +242,10 @@ Chhatarpur Hills, New Delhi
 
   <div className="bg-black mt-3 border-t">
     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-      <p className="text-white text-sm text-center sm:text-left">© 2024 Circle —
-        <a href="https://twitter.com/knyttneve" className="text-text ml-1" target="_blank" rel="noopener noreferrer">@knyttneve</a>
+      <p className="text-white text-sm text-center sm:text-left">© 2024 Circle 
+        {/* <a href="https://twitter.com/knyttneve" className="text-text ml-1" target="_blank" rel="noopener noreferrer">@knyttneve</a> */}
       </p>
-      <span className="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-white text-sm">Enamel pin tousled raclette tacos irony</span>
+      {/* <span className="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-white text-sm">Enamel pin tousled raclette tacos irony</span> */}
     </div>
   </div>
 </footer>

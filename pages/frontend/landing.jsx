@@ -45,10 +45,10 @@ export default function Landing({ category, product }) {
             {/* <Categories/> */}
             {/* <Products product={product} /> */}
             <Wears/>
-            <h1 className="p-2 mb-6 mt-2 text-4xl uppercase font-bold text-center">
+            {/* <h1 className="p-2 mb-6 mt-2 text-4xl uppercase font-bold text-center">
                  Natural dyeing 
-            </h1>
-             <Wears/>
+            </h1> */}
+             <Wears flip={true}/>
             <BannerSection/>
             <Footer/>
             <ToastContainer />

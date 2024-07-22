@@ -22,7 +22,7 @@ function Contact() {
         
         </div>
         <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col mt-7">
-          <span className="font-semibold title-font text-gray-700">CALL US AT: +91 83680 44494</span>
+          <span className="font-semibold title-font text-gray-700">CALL US AT: +8015468175</span>
         </div>
       </div>
       <div className="py-8 flex flex-wrap md:flex-nowrap">
@@ -42,9 +42,10 @@ function Contact() {
           <p className="leading-relaxed pr-5">Our Sales Assistants are available to answer your your Whatsapp messages Monday through Sunday, 12:00PM – 8:00PM (IST), excluding holidays.</p>
         
         </div>
+        <a href="https://wa.me/8015468175">
         <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col mt-5">
         <button className="btn bg-black text-white px-5 py-4">MESSAGE US</button>
-        </div>
+        </div></a>
       </div>
       <div className="py-8 flex flex-wrap md:flex-nowrap"> 
         <div className="md:flex-grow">
@@ -52,9 +53,10 @@ function Contact() {
           <p className="leading-relaxed pr-5">For any queries regarding orders, payments, sourcing and collaboration, click ‘Email Us’ to provide your details and contact information.</p>
         
         </div>
+        <a href="mailto:info@crclestudio.com">
         <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col mt-5">
         <button className="btn bg-black text-white px-5 py-4">EMAIL US</button>
-        </div>
+        </div></a>
       </div>
     </div>
     <hr className="mt-[45px]"/>
