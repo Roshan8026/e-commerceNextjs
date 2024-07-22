@@ -80,12 +80,20 @@ const delete_cart_data = async (req, res) => {
 const update_cart_data = async (req, res) => {
     
         const data = req.body;
-        const { productID, user, quantity } = data;
-    
+        const { productID, user, productQuantity } = data;    
+
         try {
     
-            await cart.updateOne({ $and: [{ productID }, { user }] }, {productQuantity : quantity });
-            return res.status(200).json({ msg: "Product updated in cart " })
+            const updateResult = await cart.updateOne(
+                { $and: [{ productID }, { user }] },
+                { $set: { productQuantity } }
+            );
+
+            if (updateResult.nModified === 0) {
+                return res.status(404).json({ msg: "Product not found in cart or quantity not changed" });
+            }
+
+            return res.status(200).json({ msg: "Product updated in cart" });
     
         } catch (error) {
     

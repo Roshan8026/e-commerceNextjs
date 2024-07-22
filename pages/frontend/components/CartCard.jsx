@@ -10,6 +10,10 @@ export default function CartCard({ item, userID, reupdate }) {
 
     const [Curquantity, setCurQuantity] = useState(1);
 
+    useEffect(() => {
+        setCurQuantity(item.productQuantity)
+        },[])
+   
 
 
 
@@ -48,6 +52,7 @@ export default function CartCard({ item, userID, reupdate }) {
 
     const handleAdd = (data) => {
        setCurQuantity(Curquantity + 1)
+       data.productQuantity = Curquantity + 1
         updateQuantity(data)
     }
 
