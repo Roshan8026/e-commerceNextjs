@@ -22,11 +22,12 @@ export default function cart() {
         const data = await get_cart_data(user?._id);
         setCartItem(data);
     }
-
+  
     useEffect(() => {
         getLatestCartData();
     }, [])
 
+    console.log('cartItem',cartItem);
 
     // calculating Price 
     let totalPrice = 0;
@@ -62,16 +63,17 @@ export default function cart() {
                     )
                 }
 
-
+                {cartItem?.length === 0 ? <> </> : (
                 <div className='w-full lg:w-1/4 ml-auto p-2 flex  flex-col justify-center mt-4'>
                     <h1 className='uppercase text-2xl font-bold py-3 border-b-2 border-gray-900 '>Total Price</h1>
                     <p className='text-2xl font-semibold p-2'>₹ {totalPrice}</p>
                     <button className='text-lg font-semibold bg-orange-600 text-white uppercase px-4  py-2 cursor-pointer border-2 border-orange-600 rounded-xl hover:bg-transparent hover:text-black duration-700 transition' onClick={() => setShowCheckout(true)}>CheckOut</button>
                 </div>
+                )}
             </div>
             <Footer />
             <ToastContainer />
-                {showCheckout && <CheckoutForm onClose={() => setShowCheckout(false)} />}
+                {showCheckout && <CheckoutForm onClose={() => setShowCheckout(false)} cartItem={cartItem}  userID={userID}/>}
         </div >
     )
 }

@@ -321,3 +321,21 @@ export const delete_Banner = async (id) => {
         console.log('error in deleting Banner Data (services) => ' + error);
     }
 }
+
+// create order create_order
+
+export const create_order = async (product) => {
+    try {
+        const res = await fetch(`${baseURl}/api/frontend/order`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.log('error at adding product to order (services) => ' + error)
+    }
+}
