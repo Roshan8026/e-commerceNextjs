@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import Product from './Product.js'; // Adjust the path accordingly
 
 const OrderProductSchema = new mongoose.Schema({
     product: {
@@ -23,6 +24,10 @@ const OrderSchema = new mongoose.Schema({
         type: String,
         required: true,
         match: [/^\S+@\S+\.\S+$/, 'Please enter a valid email address'],
+    },
+    name: {
+        type: String,
+        required: true,
     },
     phone: {
         type: String,
@@ -57,6 +62,6 @@ const OrderSchema = new mongoose.Schema({
 
 OrderSchema.index({ user: 1 });
 
-const Order = mongoose.models.Order || mongoose.model('orders', OrderSchema);
+const Order = mongoose.models.orders || mongoose.model('orders', OrderSchema);
 
 export default Order;
