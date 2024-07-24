@@ -59,6 +59,24 @@ export default function CheckoutForm({ onClose , cartItem , userID}) {
                 console.log(error)
                 toast.error(error)
             } 
+
+              // Send email
+                await fetch('/api/sendEmail', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email,
+                        name,
+                        address,
+                        city,
+                        state,
+                        postalCode,
+                        phone,
+                        products: createOder.products,
+                    }),
+                });
              const deletePromises = cartItem.map(item => delete_cart(item));
 
             // Wait for all promises to resolve
