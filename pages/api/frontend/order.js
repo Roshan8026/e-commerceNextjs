@@ -44,3 +44,35 @@ const get_order_data = async (req, res) => {
         return res.status(401).json({ error: "Something went wrong" });
     }
 }
+
+const update_order_status = async (req, res) => {
+    const { orderId, status } = req.body;
+
+    try {
+        const updateResult = await Order.updateOne(
+            { _id: orderId },
+            { $set: { status } }
+        );
+
+        if (updateResult.nModified === 0) {
+            return res.status(404).json({ msg: "Order not found or status not changed" });
+        }
+
+        return res.status(200).json({ msg: "Order status updated" });
+    } catch (error) {
+        console.log('Error in updating order status (server) => ' + error);
+        return res.status(401).json({ error: "Something went wrong" });
+    }
+}
+
+const delete_order = async (req, res) => {
+    const { orderId } = req.body;
+
+    try {
+        await Order.deleteOne({ _id: orderId });
+        return res.status(200).json({ msg: "Order deleted successfully" });
+    } catch (error) {
+        console.log('Error in deleting order (server) => ' + error);
+        return res.status(401).json({ error: "Something went wrong" });
+    }
+}

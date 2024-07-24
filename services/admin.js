@@ -339,3 +339,17 @@ export const create_order = async (product) => {
         console.log('error at adding product to order (services) => ' + error)
     }
 }
+
+// get my order
+
+export const get_my_order = async (id) => {
+    try {
+        const res = await fetch(`${baseURl}/api/frontend/order?id=${id}`, {
+            method: 'GET',
+        })
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.log('error at getting order data (services) => ' + error)
+    }
+}

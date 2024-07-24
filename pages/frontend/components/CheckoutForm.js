@@ -13,6 +13,7 @@ export default function CheckoutForm({ onClose , cartItem , userID}) {
     const [state, setState] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [name, setName] = useState('');
     console.log('user',userID);
     
      const delete_cart = async (data) => {
@@ -36,6 +37,7 @@ export default function CheckoutForm({ onClose , cartItem , userID}) {
                     product: item.productID,
                     quantity: item.productQuantity
                 })),
+            name: name,
             email: email,
             phone: phone,
             address:address,
@@ -57,11 +59,31 @@ export default function CheckoutForm({ onClose , cartItem , userID}) {
                 console.log(error)
                 toast.error(error)
             } 
+
+              // Send email
+                await fetch('/api/sendEmail', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email,
+                        name,
+                        address,
+                        city,
+                        state,
+                        postalCode,
+                        phone,
+                        products: createOder.products,
+                    }),
+                });
              const deletePromises = cartItem.map(item => delete_cart(item));
 
             // Wait for all promises to resolve
             await Promise.all(deletePromises);
-            Router.push('/frontend/landing')
+            setTimeout(() => {
+                Router.push('/frontend/landing')
+            }, 4000);
         }
 
     return (
@@ -69,6 +91,16 @@ export default function CheckoutForm({ onClose , cartItem , userID}) {
             <div className="bg-white p-8 rounded-lg w-full max-w-md">
                 <h2 className="text-2xl font-bold mb-4">Basic Information</h2>
                 <form onSubmit={handleSubmit}>
+                    <div className="mb-4">
+                        <label className="block text-sm font-bold mb-2">Name</label>
+                        <input 
+                            type="text" 
+                            className="w-full p-2 border border-gray-300 rounded"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
+                    </div>
                     <div className="mb-4">
                         <label className="block text-sm font-bold mb-2">Email Address</label>
                         <input 
