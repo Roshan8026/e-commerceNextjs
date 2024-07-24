@@ -17,12 +17,12 @@ export default function Footer() {
     return (
 
       <div>
-        <footer className="text-white body-font px-2 bg-black">
+        <footer className="text-white body-font px-2 bg-black z-50 footer relative">
         <section className="text-gray-600 body-font">
   <div className="container px-5 mx-auto border-b">
     <div className="w-full mx-auto">
     
-      <div className=" mt-10">
+      <div className=" ">
         <div className="w-full text-center text-white sm:pr-8 sm:py-8">
          <p>39, 5th main Road, kasthuribai nagar, Adyar, chennai - 600020
 </p>

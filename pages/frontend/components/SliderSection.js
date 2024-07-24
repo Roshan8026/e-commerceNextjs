@@ -71,7 +71,7 @@ function SliderSection({product}) {
 
   return (
     <div>
-      <h1 className="p-2 mb-6 mt-2 text-4xl uppercase font-bold text-center">
+      <h1 className=" mb-1 text-4xl uppercase font-bold text-center">
       New Arrivals
       </h1>
 

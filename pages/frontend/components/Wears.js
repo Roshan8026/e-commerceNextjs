@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import men from '../../../public/men.jpg'
-import women from '../../../public/women.jpg'
+import men from '../../../public/wear1.jpg'
+import men2 from '../../../public/wear2.jpg'
 import Link from 'next/link';
 
 function Wears({flip}) {
@@ -11,18 +11,18 @@ function Wears({flip}) {
 return (
     <div>
       <section className="text-gray-600 body-font">
-        <div className="container mx-auto flex px- py-12 md:flex-row flex-col items-center">
- <div className=" lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-          <div className="ml-8">
+        <div className="container mx-auto flex md:flex-row flex-col items-center">
+ <div className=" lg:w-full md:w-1/2 w-full mb-10 md:mb-0">
+          <div className="lg:ml-8 ml-4">
 
-              <h1 className="text-black text-4xl font-bold mb-8">KNITWEAR</h1>
+              <h1 className="text-black text-4xl font-bold lg:mb-8 mb-2">KNITWEAR</h1>
               <p>Hand-Knitting is an integral part of our creative and manufacturing process.</p>
               <p>
-              Every season, we work with our all women's community in Jhanjeli, india for cart 
+              Every season, we work with our all women's community in Jhanjeli, india for<br/>  cart 
 
               our Knitwear and have been working with them for about 5 year's now.</p>
 
-              <button class=" text-white bg-black border-0 py-2 px-8 my-8 focus:outline-none hover:bg-gray-600 rounded text-lg">Learn More</button>
+              <button class=" text-white bg-black border-0 py-2 px-8 lg:my-8 mt-3 focus:outline-none hover:bg-gray-600 rounded text-lg">Learn More</button>
               
           </div>
           {/* <Image
@@ -39,13 +39,13 @@ return (
       </div> */}
           </div>
 
-          <div className=" lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+          <div className=" lg:w-full md:w-1/2 w-full lg:mb-10 mb-4">
           <Image
             src={men}
             alt="Picture of the author"
             style={{
               width: '100%',
-              height: '100vh',
+              height: '',
             }}
           />  
             </div>
@@ -58,14 +58,14 @@ return (
     return (
       <div>
         <section className="text-gray-600 body-font">
-    <div className="container mx-auto flex px- py-12 md:flex-row flex-col items-center">
-      <div className=" lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+    <div className="container mx-auto flex py-4 md:flex-row flex-col items-center">
+      <div className=" lg:w-full md:w-1/2 w-full mb-10 md:mb-0 ">
       <Image
-        src={men}
+        src={men2}
         alt="Picture of the author"
         style={{
           width: '100%',
-          height: '100vh',
+          height: '',
         }}
       />  
       {/* <div className='text-center'>
@@ -74,17 +74,17 @@ return (
       </div> */}
   
         </div>
-      <div className=" lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-      <div className="ml-8">
+      <div className=" lg:w-full md:w-1/2 w-full lg:mb-10 mb-2 ">
+      <div className="lg:ml-8 ml-4 ">
   
-  <h1 className="text-black text-4xl font-bold mb-8">KNITWEAR</h1>
+  <h1 className="text-black text-4xl font-bold lg:mb-8 mb-3">KNITWEAR</h1>
   <p>Hand-Knitting is an integral part of our creative and manufacturing process.</p>
   <p>
-  Every season, we work with our all women's community in Jhanjeli, india for cart 
+  Every season, we work with our all women's community in Jhanjeli, india for <br/> cart
   
   our Knitwear and have been working with them for about 5 year's now.</p>
   
-            <button class=" text-white bg-black border-0 py-2 px-8 my-8 focus:outline-none hover:bg-gray-600 rounded text-lg">Learn More</button>
+            <button class=" text-white bg-black border-0 py-2 px-8 lg:my-8 mt-3 focus:outline-none hover:bg-gray-600 rounded text-lg">Learn More</button>
           
       </div>
       {/* <Image

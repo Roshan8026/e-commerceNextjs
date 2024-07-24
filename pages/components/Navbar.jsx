@@ -139,7 +139,7 @@ export default function Navbar({pos}) {
           <>
           <AiOutlineShoppingCart onClick={()  => Router.push('/frontend/cart')}  className='text-2xl text-white mx-4 hover:text-orange-600 transition-all duration-500 cursor-pointer' />
                 {
-                    curUser ? <BiLogOut id="logout" className='text-2xl  text-white mx-4  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={logout} /> : <BiLogIn id="login" className='text-2xl  text-white mx-4  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={() => Router.push('/login')}  />
+                    curUser ? <BiLogOut id="logout" className='text-2xl  mx-4  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={logout} /> : <BiLogIn id="login" className='text-2xl text-white mx-2  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={() => Router.push('/login')}  />
                 }
 
             <ReactTooltip
@@ -168,11 +168,11 @@ export default function Navbar({pos}) {
 
     {/*mobile header  */}
  
-    <header className="bg-white fixed top-0 w-full shadow-md z-50 flex lg:hidden md:hidden">
+    <header className="bg-black fixed top-0 w-full shadow-md z-50 flex lg:hidden md:hidden">
   <nav className="container mx-auto px-2 py-3  items-center justify-between">
     <div className="flex items-center justify-between">
     <div className="md:hidden">
-      <button className="text-gray-800 focus:outline-none" onClick={toggleMenu}>
+      <button className="text-white focus:outline-none" onClick={toggleMenu}>
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           {isMenuOpen ? (
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -191,9 +191,36 @@ export default function Navbar({pos}) {
         }}
       />
      <div>
-     <a className="block p-2 font-semibold text-gray-500 text-2xl" href="#">
+     {/* <a className="block p-2 font-semibold text-gray-500  text-2xl" href="#">
           <HiShoppingBag />
-        </a>
+        </a> */}
+        
+       
+          <div className='flex'>
+          <a className="block p-1 font-semibold text-white text-1xl"  href="#">
+            <FaUser />
+
+          </a>
+          <AiOutlineShoppingCart onClick={()  => Router.push('/frontend/cart')}  className='text-2xl text-white mx-4 hover:text-orange-600 transition-all duration-500 cursor-pointer' />
+                {
+                    curUser ? <BiLogOut id="logout" className='text-2xl  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={logout} /> : <BiLogIn id="login" className='text-2xl text-white  hover:text-orange-600 transition-all duration-500 cursor-pointer' onClick={() => Router.push('/login')}  />
+                }
+
+            <ReactTooltip
+                anchorId="login"
+                place="bottom"
+                variant="info"
+                content="LOGIN"
+                className="text-white"
+            />
+            <ReactTooltip
+                anchorId="logout"
+                place="bottom"
+                variant="info"
+                content="LOGOUT"
+                 className="text-white"
+            />
+          </div>
      </div>
     </div>
 
@@ -202,7 +229,7 @@ export default function Navbar({pos}) {
       
       <div className="flex flex-col mt-4">
       <a
-              className="text-gray-800 hover:text-blue-600 flex my-2 "  onClick={toggleDropdown}
+              className="text-white  hover:text-blue-600 flex my-2 "  onClick={toggleDropdown}
               href="#" 
             >
              
@@ -210,7 +237,7 @@ export default function Navbar({pos}) {
               <MdKeyboardArrowDown className="mt-1 ml-2" />
             </a>
             {isOpen && (
- <div className="absolute right-100 mt-10 top-24 rounded-md shadow-lg bg-gray-200 w-1/4">
+ <div className="absolute right-100 mt-10 top-24 rounded-md shadow-lg bg-gray-200 lg:w-1/4 w-1/2">
  <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">ALL</a>
    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">T-SHIRT</a>
@@ -222,8 +249,8 @@ export default function Navbar({pos}) {
 
             )} 
        
-        <a href="#" className="text-gray-800 hover:text-blue-600  my-2">OUR STORY</a>
-        <a href="#" className="text-gray-800 hover:text-blue-600  my-2">MATERIALS</a>
+        <a href="#" className="text-white hover:text-blue-600  my-2">OUR STORY</a>
+        <a href="#" className="text-white hover:text-blue-600  my-2">MATERIALS</a>
       </div>
 
 
